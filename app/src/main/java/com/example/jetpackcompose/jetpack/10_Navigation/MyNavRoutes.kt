@@ -1,4 +1,4 @@
-package com.example.jetpackcompose.jetpack.Navigation
+package com.example.jetpackcompose.jetpack.`10_Navigation`
 
 import kotlinx.serialization.Serializable
 
@@ -13,4 +13,9 @@ sealed class MyNavRoutes {
     object LoginScreen : MyNavRoutes()
     @Serializable
     object HomeScreen : MyNavRoutes()
+    @Serializable
+    object WelcomeScreen : MyNavRoutes(){
+        data class WelcomeScreen(val username : String): MyNavRoutes()
+
+    }
 }

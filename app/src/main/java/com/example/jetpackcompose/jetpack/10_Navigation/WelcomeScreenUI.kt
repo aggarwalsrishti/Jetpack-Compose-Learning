@@ -1,4 +1,4 @@
-package com.example.jetpackcompose.jetpack.Navigation
+package com.example.jetpackcompose.jetpack.`10_Navigation`
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -16,40 +16,44 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 
 
 @Composable
-fun HomeScreenUI(navController: NavHostController) {
+fun WelcomeScreenUI(username: String, navController: NavHostController) {
     Column(
         modifier = Modifier.fillMaxSize()
             .padding(horizontal = 16.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-        Text(text="Home Screen",
+        Text(
+            text = "Welcome Student",
             fontWeight = FontWeight.SemiBold,
             fontSize = 30.sp,
-            color = Color.DarkGray)
+            color = Color.DarkGray
+        )
 
-    }
-    Spacer(modifier = Modifier.height(16.dp))
-    Button(
-        onClick = {navController.navigate(MyNavRoutes.LoginScreen)},
-        modifier=Modifier.fillMaxWidth()
-            .height(48.dp),
-        colors= ButtonDefaults.buttonColors(
-            containerColor =  Color.DarkGray,
-            contentColor= Color.White
-        ),
-        shape = RoundedCornerShape(8.dp)
 
-    ) {
-        Text(text="BACK TO LOGIN SCREEN",
-            fontSize = 16.sp,
-            fontWeight = FontWeight.SemiBold)
+        Spacer(modifier = Modifier.height(16.dp))
+        Button(
+            onClick = { navController.navigate(MyNavRoutes.LoginScreen) },
+            modifier = Modifier.fillMaxWidth()
+                .height(48.dp),
+            colors = ButtonDefaults.buttonColors(
+                containerColor = Color.DarkGray,
+                contentColor = Color.White
+            ),
+            shape = RoundedCornerShape(8.dp)
+
+        ) {
+            Text(
+                text = "BACK TO LOGIN SCREEN",
+                fontSize = 16.sp,
+                fontWeight = FontWeight.SemiBold
+            )
+        }
     }
 }
