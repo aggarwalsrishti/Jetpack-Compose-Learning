@@ -18,7 +18,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
-
+@Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun HorizontalDividerExample() {
     Column(
@@ -40,7 +40,7 @@ fun HorizontalDividerExample() {
     }
 }
 
-@Preview(showBackground = true, showSystemUi = true)
+
 @Composable
 fun VerticalDividerExample() {
     Row(

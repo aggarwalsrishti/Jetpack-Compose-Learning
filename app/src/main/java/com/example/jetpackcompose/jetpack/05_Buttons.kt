@@ -77,7 +77,7 @@ fun ButtonExample() {
     }
 }
 
-@Preview(showBackground = true, showSystemUi = true)
+
 @Composable
 fun LoginScreen() {
     val context= LocalContext.current
