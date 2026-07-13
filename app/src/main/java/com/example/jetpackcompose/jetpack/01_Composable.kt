@@ -20,6 +20,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
+
 @Composable
 fun TextExample(){
     Text(
@@ -33,6 +34,7 @@ fun TextExample(){
     )
 }
 
+
 @Composable
 fun TextFieldExample() {
     var name by remember{ mutableStateOf(value = "") }
@@ -41,8 +43,8 @@ fun TextFieldExample() {
         onValueChange = {name = it},
         //label = {Text(text = "Enter your name")}
         placeholder = {Text(text = "Enter your name")},
-        leadingIcon = {Text(text = "*", fontSize = 20.sp, fontWeight = FontWeight.Bold)},
-        trailingIcon ={Text(text = "#", fontSize = 20.sp, fontWeight = FontWeight.Bold)},
+        leadingIcon = {Text(text = "*", fontSize = 20.sp, fontWeight = FontWeight.Bold)}, //starting icon
+        trailingIcon ={Text(text = "#", fontSize = 20.sp, fontWeight = FontWeight.Bold)}, //ending icon
         singleLine = true,
         shape = CircleShape,
         colors = TextFieldDefaults.colors(
@@ -54,6 +56,7 @@ fun TextFieldExample() {
     )
 }
 
+@Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun OutlinedTextFieldExample() {
     var name by remember{ mutableStateOf(value = "") }
