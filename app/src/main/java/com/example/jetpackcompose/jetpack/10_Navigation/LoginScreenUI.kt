@@ -68,7 +68,7 @@ fun LoginScreenUI(navController: NavHostController) {
         )
         Spacer(modifier = Modifier.height(16.dp))
         Button(
-            onClick = {navController.navigate(MyNavRoutes.WelcomeScreen(username))},
+            onClick = {navController.navigate(MyNavRoutes.WelcomeScreen)},
             modifier=Modifier.fillMaxWidth()
                 .height(48.dp),
             colors= ButtonDefaults.buttonColors(

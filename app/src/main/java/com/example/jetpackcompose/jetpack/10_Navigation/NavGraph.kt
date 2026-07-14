@@ -29,7 +29,10 @@ fun NavGraph() {
 
         composable <MyNavRoutes.WelcomeScreen>{backStackEntry ->
             val data=backStackEntry.toRoute<MyNavRoutes.WelcomeScreen>()
-            WelcomeScreenUI(data.username, navController)
+            WelcomeScreenUI(
+                username = data.username,
+                navController = navController
+            )
         }
     }
 }

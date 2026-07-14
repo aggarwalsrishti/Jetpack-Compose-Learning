@@ -15,6 +15,8 @@ sealed class MyNavRoutes {
     object HomeScreen : MyNavRoutes()
     @Serializable
     object WelcomeScreen : MyNavRoutes(){
+        val username: String = ""
+
         data class WelcomeScreen(val username : String): MyNavRoutes()
 
     }
