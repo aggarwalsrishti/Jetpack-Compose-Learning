@@ -12,12 +12,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
 
-@Preview(showBackground = true, showSystemUi = true)
 @Composable
-fun NavBarProfileScreen() {
+fun NavBarProfileScreen(navController: NavHostController) {
     Scaffold(
-        bottomBar = {MyNavBar()}
+        bottomBar = {MyNavBar(navController = navController, key="Profile")}
     ) { innerPadding ->
         Column(
             modifier = Modifier.fillMaxSize()

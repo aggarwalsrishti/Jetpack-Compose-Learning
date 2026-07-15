@@ -7,6 +7,8 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.material3.Scaffold
 import com.example.jetpackcompose.jetpack.`10_Navigation`.NavGraph
 import com.example.jetpackcompose.jetpack.`12_Scaffold`.MyScreen
+import com.example.jetpackcompose.jetpack.`13_Navigation`.MyNavBar
+import com.example.jetpackcompose.jetpack.`13_Navigation`.NavBarNavigation
 import com.example.jetpackcompose.jetpack.LazyColumnExample
 import com.example.jetpackcompose.jetpack.LazyRowExample
 import com.example.jetpackcompose.jetpack.NestedLazyLists
@@ -22,7 +24,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             JetPackComposeTheme {
-                NavGraph()
+                NavBarNavigation()
                 }
             }
         }
