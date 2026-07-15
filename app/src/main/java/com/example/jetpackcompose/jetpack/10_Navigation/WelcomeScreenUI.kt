@@ -30,7 +30,7 @@ fun WelcomeScreenUI(username: String, navController: NavHostController) {
         verticalArrangement = Arrangement.Center
     ) {
         Text(
-            text = "Welcome Student",
+            text = "Welcome $username",
             fontWeight = FontWeight.SemiBold,
             fontSize = 30.sp,
             color = Color.DarkGray
