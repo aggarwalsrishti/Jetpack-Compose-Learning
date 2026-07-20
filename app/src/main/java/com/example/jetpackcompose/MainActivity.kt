@@ -5,6 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.material3.Scaffold
+import com.example.jetpackcompose.UIPractice.CartList
 import com.example.jetpackcompose.jetpack.`10_Navigation`.NavGraph
 import com.example.jetpackcompose.jetpack.`12_Scaffold`.MyScreen
 import com.example.jetpackcompose.jetpack.`13_Navigation`.MyNavBar

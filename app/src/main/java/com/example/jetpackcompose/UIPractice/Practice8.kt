@@ -1,12 +1,14 @@
 package com.example.jetpackcompose.UIPractice
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.absolutePadding
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -18,6 +20,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.Remove
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
@@ -27,6 +30,11 @@ import androidx.compose.material3.CardElevation
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.graphics.Color
@@ -44,6 +52,7 @@ import com.example.jetpackcompose.R
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun CartList() {
+    var quantity by rememberSaveable() {mutableStateOf(1) }
     LazyColumn()   {
         items(10){index->
 
@@ -126,28 +135,57 @@ fun CartList() {
                 }
             }
             Row(modifier= Modifier.fillMaxWidth()
-                .padding(10.dp),
-                horizontalArrangement = Arrangement.SpaceEvenly
+                ,
+                horizontalArrangement = Arrangement.SpaceEvenly,
+                verticalAlignment = Alignment.CenterVertically
+
+
                 ) {
+
+
+                    Row(
+                        modifier=Modifier.border(4.dp,Color.Yellow,RoundedCornerShape(32.dp)),
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Button(
+                            onClick = { quantity-- },
+                            enabled = quantity > 0,
+                            colors = ButtonDefaults.buttonColors(
+                                containerColor = Color.White,
+                                contentColor = Color.Black
+                            )
+                        ) {
+                            Icon(
+                                imageVector = Icons.Default.Remove,
+                                contentDescription = "Remove Icon"
+                            )
+                        }
+
+                        Text(
+                            text = "$quantity",
+                            fontSize = 20.sp,
+
+                        )
+                        Button(
+                            onClick = { quantity++ },
+                            colors = ButtonDefaults.buttonColors(
+                                containerColor = Color.White,
+                                contentColor = Color.Black
+                            )
+                        ) {
+                            Icon(
+                                imageVector = Icons.Default.Add,
+                                contentDescription = "Add Icon",
+
+                                )
+                        }
+
+                    }
 
                 Button(
                     onClick = {},
-                    modifier = Modifier.border(width = 4.dp,
-                        color = Color.Yellow,
-                        shape= RoundedCornerShape(32.dp)),
-                    shape = RoundedCornerShape(32.dp),
-                    colors = ButtonDefaults.buttonColors(
-                        containerColor = Color.White,
-                        contentColor = Color.Black
-                    )
-                ) {
-                    Text(text="-   1   +",
-                        fontSize = 16.sp)
-                }
-
-                Button(
-                    onClick = {},
-                    modifier = Modifier.border(width = 1.dp,
+                    modifier = Modifier
+                        .border(width = 1.dp,
                         color = Color.DarkGray,
                         shape= RoundedCornerShape(32.dp)),
                     shape = RoundedCornerShape(32.dp),
@@ -160,6 +198,13 @@ fun CartList() {
                         fontSize = 16.sp)
                 }
 
+
+            }}
+        Spacer(modifier = Modifier.height(5.dp))
+            Row(modifier= Modifier.fillMaxWidth()
+                .padding(bottom = 10.dp),
+                horizontalArrangement = Arrangement.SpaceEvenly
+            ) {
                 Button(
                     onClick = {},
                     modifier = Modifier.border(width = 1.dp,
@@ -174,11 +219,6 @@ fun CartList() {
                     Text(text="Save for Later",
                         fontSize = 16.sp)
                 }
-            }
-            Row(modifier= Modifier.fillMaxWidth()
-                .padding(bottom = 10.dp)
-            ) {
-                Spacer(modifier = Modifier.width(10.dp))
                 Button(
                     onClick = {},
                     modifier = Modifier.border(width = 1.dp,
@@ -193,7 +233,7 @@ fun CartList() {
                     Text(text="Compare",
                         fontSize = 16.sp)
                 }
-                Spacer(modifier=Modifier.width(10.dp))
+
                 Button(
                     onClick = {},
                     modifier = Modifier.border(width = 1.dp,
@@ -214,4 +254,4 @@ fun CartList() {
 
         
     }
-}}}
+}}
