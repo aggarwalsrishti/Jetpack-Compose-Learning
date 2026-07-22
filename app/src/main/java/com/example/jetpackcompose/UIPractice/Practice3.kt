@@ -1,4 +1,4 @@
-package com.example.jetpackcompose.UIPractice
+package com.example.jetpackcompose.uiPractice
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement

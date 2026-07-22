@@ -4,20 +4,11 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.material3.Scaffold
-import com.example.jetpackcompose.UIPractice.CartList
-import com.example.jetpackcompose.jetpack.`10_Navigation`.NavGraph
-import com.example.jetpackcompose.jetpack.`12_Scaffold`.MyScreen
-import com.example.jetpackcompose.jetpack.`13_Navigation`.MyNavBar
 import com.example.jetpackcompose.jetpack.`13_Navigation`.NavBarNavigation
-import com.example.jetpackcompose.jetpack.LazyColumnExample
-import com.example.jetpackcompose.jetpack.LazyRowExample
-import com.example.jetpackcompose.jetpack.NestedLazyLists
-import com.example.jetpackcompose.jetpack.SnackBarExample
-import com.example.jetpackcompose.jetpack.ToastExample
-import com.example.jetpackcompose.jetpack.TypesOfItem
 
 import com.example.jetpackcompose.ui.theme.JetPackComposeTheme
+import com.example.jetpackcompose.uiPractice.InstaScreen
+
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,7 +16,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             JetPackComposeTheme {
-                NavBarNavigation()
+                InstaScreen()
                 }
             }
         }
