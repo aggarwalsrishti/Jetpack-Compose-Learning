@@ -4,10 +4,12 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import com.example.jetpackcompose.jetpack.`13_Navigation`.NavBarNavigation
 
 import com.example.jetpackcompose.ui.theme.JetPackComposeTheme
-import com.example.jetpackcompose.uiPractice.InstaScreen
+import com.example.jetpackcompose.uiPractice.practice10.welcomescreen.NavigationGraph
+
+
+import com.example.jetpackcompose.uiPractice.practice10.welcomescreen.SignInPage
 
 
 class MainActivity : ComponentActivity() {
@@ -16,7 +18,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             JetPackComposeTheme {
-                InstaScreen()
+                NavigationGraph()
                 }
             }
         }
